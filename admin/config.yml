@@ -1,7 +1,8 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: caisj2016/jekyll-base
   branch: master # Branch to update (optional; defaults to master)
-  accept_roles:admin #optional - accepts all users if left out
+  #accept_roles:admin #optional - accepts all users if left out
   # - editor
 # This line should *not* be indented
 # publish_mode: editorial_workflow
@@ -9,22 +10,13 @@ backend:
 # Media files will be stored in the repo under images/uploads
 media_folder: "images/uploads"
 
-
----
-layout: post
-title:  "Welcome to Jekyll!"
-date:   2015-02-12 13:46:40
-categories: jekyll update
----
-
 collections:
-  - name: "post" # Used in routes, e.g., /admin/collections/blog
-    label: "post" # Used in the UI
+  - name: "blog" # Used in routes, e.g., /admin/collections/blog
+    label: "Blog" # Used in the UI
     folder: "_posts" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
-      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "categories", name: "categories", widget: "string"}
+      - {label: "Categories", name: "categories", widget: "string"}
