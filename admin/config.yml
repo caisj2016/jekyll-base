@@ -17,16 +17,16 @@ categories: jekyll update
 ---
 
 collections:
-  - name: "blog" # Used in routes, e.g., /admin/collections/blog
-    label: "blog" # Used in the UI
+  - name: "post" # Used in routes, e.g., /admin/collections/blog
+    label: "post" # Used in the UI
     folder: "_posts" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
-      - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
+      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Featured Image", name: "categories", widget: "image"}
+      - {label: "categories", name: "categories", widget: "string"}
 backend:
   name: git-gateway
   accept_roles: #optional - accepts all users if left out
